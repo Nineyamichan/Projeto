@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="productDS" transaction-type="RESOURCE_LOCAL">
+
+            <provider>org.hibernate.ejb.HibernatePersistence</provider>
+            <class>br.com.supera.game.store.modelo.Client</class>
+            <class>br.com.supera.game.store.modelo.Product</class>
+            <class>br.com.supera.game.store.modelo.RERequest</class>
+            <class>br.com.supera.game.store.modelo.Request</class>
+            <class>br.com.supera.game.store.modelo.RequestPK</class>
+
+            <properties>
+                <!--  property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+                <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
+                <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:test;DB_CLOSE_DELAY=-1" />
+                <property name="javax.persistence.jdbc.user" value="sa" />
+                <property name="javax.persistence.jdbc.password" value="" />
+                <property name="hibernate.hbm2ddl.auto" value="create-drop" /> 
+                <property name="hibernate.show_sql" value="true" />  -->
+                
+                <property name="hibernate.archive.autodetection" value="class" />
+				<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8InnoDBDialect" />
+				<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+				<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/mydb" />
+				<property name="hibernate.connection.username" value="root" />
+				<property name="hibernate.connection.password" value="root" />
+				<property name="hibernate.hbm2ddl.auto" value="update" />
+            </properties>
+
+    </persistence-unit>
+
+</persistence>
